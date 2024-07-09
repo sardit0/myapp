@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/container_widget.dart';
 import 'package:myapp/news_container.dart';
+import 'package:myapp/row_column/column_widget.dart';
+import 'package:myapp/row_column/latihan.dart';
+import 'package:myapp/row_column/row_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,33 +16,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('Anjayyy Flutter'),
+          title: Text('Si Flutter'),
           centerTitle: true,
-          backgroundColor: Colors.greenAccent,
+          backgroundColor: Colors.pinkAccent,
         ),
-        body: NewsContainer(),
-      ),
-    );
-  }
-}
-
-class TextWidget extends StatelessWidget {
-  const TextWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Hello Dunia',
-        style: TextStyle(
-            fontSize: 30,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            backgroundColor: Colors.black26),
+        body: Latihan(),
       ),
     );
   }

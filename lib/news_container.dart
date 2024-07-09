@@ -22,7 +22,7 @@ class NewsContainer extends StatelessWidget {
                 height: 200.0,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrrSeED_hGhTydZeXpT2AS7VAtSjG-bUWFkw&s'),
+                    image: AssetImage('assets/image/Shrek.jpg'),
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(8.0),
@@ -38,7 +38,7 @@ class NewsContainer extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.orange
+                  color: Colors.pinkAccent
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -52,7 +52,7 @@ class NewsContainer extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.orange,
+                  color: Colors.pinkAccent,
                 ),
                 textAlign: TextAlign.justify,
               ),
