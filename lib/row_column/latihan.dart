@@ -35,7 +35,7 @@ class Latihan extends StatelessWidget {
               border: Border.all(color: Color.fromARGB(255, 93, 93, 93)),
               borderRadius: BorderRadius.circular(8.0),
             ),
-            child: Text('Nama'),
+            child: Text('Nama : Muhammad Adhitya'),
           ),
           SizedBox(
             height: 10,
@@ -47,7 +47,7 @@ class Latihan extends StatelessWidget {
               border: Border.all(color: Color.fromARGB(255, 93, 93, 93)),
               borderRadius: BorderRadius.circular(8.0),
             ),
-            child: Text('tanggal'),
+            child: Text('Gmail : muhammadhamysha57@gmail.com'),
           ),
           SizedBox(
             height: 10,
@@ -59,7 +59,7 @@ class Latihan extends StatelessWidget {
               border: Border.all(color: Color.fromARGB(255, 93, 93, 93)),
               borderRadius: BorderRadius.circular(8.0),
             ),
-            child: Text('address'),
+            child: Text('Adress : Bandung, Kp.Cupu'),
           ),
           Positioned(
             top: 300,

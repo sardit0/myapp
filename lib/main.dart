@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:myapp/container_widget.dart';
 import 'package:myapp/news_container.dart';
 import 'package:myapp/row_column/column_widget.dart';
+import 'package:myapp/row_column/kerucut.dart';
 import 'package:myapp/row_column/latihan.dart';
+import 'package:myapp/row_column/lingkaran.dart';
 import 'package:myapp/row_column/row_widget.dart';
+import 'package:myapp/row_column/persegi.dart';
+import 'package:myapp/row_column/persegi_panjang.dart';
+import 'package:myapp/row_column/segitiga.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +27,15 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.pinkAccent,
         ),
-        body: Latihan(),
+        body: Column (
+          children: [
+         Persegi(),
+         Panjang(),
+         Lingkaran(),
+         Kerucut(),
+         Segitiga(),
+          ],
+        ),
       ),
     );
   }
