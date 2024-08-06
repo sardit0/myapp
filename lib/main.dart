@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/container_widget.dart';
+import 'package:myapp/form/display_page.dart';
+import 'package:myapp/form/form_page.dart';
 import 'package:myapp/news_container.dart';
 import 'package:myapp/row_column/column_widget.dart';
+import 'package:myapp/row_column/counter_page.dart';
 import 'package:myapp/row_column/kerucut.dart';
 import 'package:myapp/row_column/latihan.dart';
 import 'package:myapp/row_column/lingkaran.dart';
@@ -27,16 +30,30 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.pinkAccent,
         ),
-        body: Column (
-          children: [
-         Persegi(),
-         Panjang(),
-         Lingkaran(),
-         Kerucut(),
-         Segitiga(),
-          ],
-        ),
+        // body: Column (
+        //   children: [
+        //  Persegi(),
+        //  Panjang(),
+        //  Lingkaran(),
+        //  Kerucut(),
+        //  Segitiga(),
+        //  DisplayPage(),
+        //   ],
+        // ),
+        body: 
+        FormPage(),
       ),
     );
+  }
+}
+
+class DisplayPage extends StatelessWidget {
+  const DisplayPage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return DisplayPage();
   }
 }
