@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:myapp/pages/home_page.dart';
+import 'package:myapp/pages/auth/login_page.dart';
+import 'package:myapp/pages/auth/register_page.dart';
 import 'package:myapp/container_widget.dart';
-import 'package:myapp/form/display_page.dart';
-import 'package:myapp/form/form_page.dart';
+import 'package:myapp/pages/form/display_page.dart';
+import 'package:myapp/pages/form/form_page.dart';
 import 'package:myapp/news_container.dart';
 import 'package:myapp/row_column/column_widget.dart';
-import 'package:myapp/row_column/counter_page.dart';
+import 'package:myapp/pages/counter_page.dart';
 import 'package:myapp/row_column/kerucut.dart';
 import 'package:myapp/row_column/latihan.dart';
 import 'package:myapp/row_column/lingkaran.dart';
@@ -18,42 +22,36 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  Future<bool> checkLoginStatus() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString('token') != null;
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text('Si Flutter'),
-          centerTitle: true,
-          backgroundColor: Colors.pinkAccent,
-        ),
-        // body: Column (
-        //   children: [
-        //  Persegi(),
-        //  Panjang(),
-        //  Lingkaran(),
-        //  Kerucut(),
-        //  Segitiga(),
-        //  DisplayPage(),
-        //   ],
-        // ),
-        body: 
-        FormPage(),
+      title: 'Future Auth',
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
       ),
+      home: FutureBuilder<bool>(
+        future: checkLoginStatus(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.data == true) {
+            return HomePage();
+          } else {
+            return LoginPage();
+          }
+        },
+      ),
+      routes: {
+        '/login': (context) => LoginPage(),
+        '/register': (context) => RegisterPage(),
+        '/home': (context) => HomePage(),
+      },
     );
   }
 }
 
-class DisplayPage extends StatelessWidget {
-  const DisplayPage({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return DisplayPage();
-  }
-}
