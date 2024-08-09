@@ -30,6 +30,7 @@ class Kategori {
 class Data {
   int? id;
   String? namaKategori;
+  String? slug;
   String? createdAt;
   String? updatedAt;
 
@@ -38,6 +39,7 @@ class Data {
   Data.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     namaKategori = json['nama_kategori'];
+    slug = json['slug'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
   }
@@ -46,6 +48,7 @@ class Data {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['nama_kategori'] = this.namaKategori;
+    data['slug'] = this.slug;
     data['created_at'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
     return data;

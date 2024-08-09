@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:myapp/pages/home_page.dart';
 import 'package:myapp/pages/auth/login_page.dart';
 import 'package:myapp/pages/auth/register_page.dart';
+import 'package:myapp/pages/kategori/create_kategori_page.dart';
 import 'package:myapp/container_widget.dart';
 import 'package:myapp/pages/form/display_page.dart';
 import 'package:myapp/pages/form/form_page.dart';
@@ -54,4 +55,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
