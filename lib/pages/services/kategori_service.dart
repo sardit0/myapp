@@ -36,7 +36,7 @@ class KategoriService {
       body: {'nama_kategori': namaKategori},
     );
 
-    return response.statusCode == 201;
+    return response.statusCode == 200;
   }
 
   Future<bool> deleteKategori(int id) async {
